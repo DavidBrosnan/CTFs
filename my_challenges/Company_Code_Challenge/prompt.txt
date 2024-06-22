@@ -1,0 +1,9 @@
+You've been tasked with performing a code review of the following snippet and determine if there is a path to obtaining the secret_message in an unintended way!
+
+For the sake of this example please imagine this code is running a web application at "vulnerable.ecorp.com". You are accessing the page from the external internet so direct navigation to "http://vulnerable.ecorp.com/secret" will result in an error!
+
+
+
+1. What URL can you craft to exploit the code below and divulge the secret_message?
+
+2. What recommendations would you give to best remediate the issue(s) that led to exploitation?

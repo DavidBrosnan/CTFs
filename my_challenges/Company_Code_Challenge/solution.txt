@@ -1,0 +1,14 @@
+1. What URL can you craft to exploit the code below and divulge the secret_message?
+
+The python check isn't anchoring the check to the beginning of the string. So as long as the URL you provide to the parameter has "http://ecorp.com" somewhere in it, it'll pass
+
+The second part is that since the server is making the request, if you force it to send an HTTP request to itself, the source IP will show as 127.0.0.1 so that'll bypass the IP check.
+
+Solution: http://vulnerable.ecorp.com/visit_ecorp?url=http://127.0.0.1/secret?x=http://ecorp.com
+
+
+2. What recommendations would you give to best remediate the issue(s) that led to exploitation?
+
+- Utilize more proper controls for determining if the provided url is going to an ecorp.com address (e.g. an improved regex).
+- Explicitly disallow the /visit_ecorp endpoint from navigating to internal addresses.
+- Protect the /secret endpoint behind some type of authentication/authorization.
